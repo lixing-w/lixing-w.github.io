@@ -6,7 +6,7 @@
       <div class="hero-container">
         <div class="hero-content">
           <video width="640" height="480" controls>
-              <source src="{{ site.baseurl }}/assets/mandelbrot_set-4K-4K.mov" type="video/mov">
+              <source src="{{ site.baseurl }}/assets/mandelbrot_set-4K-4K.mov" type="video/quicktime">
               Your browser does not support the video tag.
           </video>
         </div>
@@ -15,11 +15,73 @@
     <div class="col-md-6">
       <div class="hero-container">
         <div class="hero-content">
-          <h1 class="text-center">H1</h1>
+          <h1 style="font-size: 48px; word-spacing:0px; font-family: Canela Deck; text-align: center;">Mandelbrot Set</h1>
+          <p style="font-size: 16px; word-spacing: -1px; font-family: Canela Deck; text-align: justify;">
+            A C++ program generating pictures of Mandelbrot set using multi-threading. 
+            It first initializes a 2D array, then each entry is associated 
+            with a complex number in the complex plane. Color is obtained by iterating 
+            the function f(z) = z^2 + c where z starts from 0 and applying arctan to 
+            normalize the color. Pixels in extreme bright areas are colored pure black, 
+            for the aesthetics of visualization.
+          </p>
         </div>
       </div>
     </div>
   </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <div class="hero-container">
+        <div class="hero-content">
+          <h1 style="font-size: 48px; word-spacing:0px; font-family: Canela Deck; text-align: center;">Graph Coloring</h1>
+          <p style="font-size: 16px; word-spacing: -1px; font-family: Canela Deck; text-align: justify;">
+            A Java program that finds all possible graphs on n vertices with coloring up to k colors, up to isomorphism. 
+            Each graph found can be pretty-printed using latex.
+            
+            Nicer recursive algorithms were developed alongside with rigorous math proofs to solve the problem on complete graphs and paths, 
+            as a part of my graph theory course midterm paper.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="hero-container">
+        <div class="hero-content">
+          <video width="640" height="480" controls>
+              <source src="{{ site.baseurl }}/assets/graph-4K.mov" type="video/quicktime">
+              Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <div class="hero-container">
+        <div class="hero-content">
+          <video width="640" height="480" controls>
+              <source src="{{ site.baseurl }}/assets/connect4-4K-4K.mov" type="video/quicktime">
+              Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="hero-container">
+        <div class="hero-content">
+          <h1 style="font-size: 48px; word-spacing:0px; font-family: Canela Deck; text-align: center;">Connect4</h1>
+          <p style="font-size: 16px; word-spacing: -1px; font-family: Canela Deck; text-align: justify;">
+            A C++ implementation of the game Connect 4 and a competitive AI named zephyr using tree search, convolution, 
+            and alpha-beta pruning. Players can select from a difficulty of 1 - 9, which is the search depth of the AI.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  
 </div>
 
 
