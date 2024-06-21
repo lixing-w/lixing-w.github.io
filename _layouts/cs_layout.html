@@ -2,22 +2,43 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-md-7">
-      <div class="hero-container">
-        <div class="hero-content">
-          <video width="640" height="480" controls>
-              <source src="{{ site.baseurl }}/assets/mandelbrot_set-4K-4K.mov" type="video/quicktime">
-              Your browser does not support the video tag.
-          </video>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-5">
+    <div class="col-xs-12 col-md-12">
       <div class="hero-container">
         <div class="hero-content">
           <p class="break"></p>
-          <h1 style="font-size: 48px; word-spacing:0px; font-family: Canela Deck; text-align: center;">Mandelbrot Set</h1>
-          <p style="font-size: 16px; word-spacing: -1px; font-family: Canela Deck; text-align: justify;">
+          <h1 class="text-center">
+            CS Projects
+          </h1>
+          <p class="text-center">
+            Here you will find a collection of small programming projects that I have 
+            created. I have always been passionate about coding and love to take on new 
+            challenges. Take a look at the demos! I welcome any feedback you may have.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-md-7">
+      <div class="hero-container">
+        <div class="hero-content">
+          <div class="video-wrapper">
+            <video controls>
+              <source src="{{ site.baseurl }}/assets/mandelbrot_set-4K-4K.mov" type="video/quicktime">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-12 col-md-5">
+      <div class="hero-container">
+        <div class="hero-content">
+          <h1 style="font-size: 40px; word-spacing:0px; font-family: Canela Deck; text-align: center;">Mandelbrot Set</h1>
+          <p style="font-size: 15px; text-align: justify;">
             A C++ program generating pictures of Mandelbrot set using multi-threading. 
             It first initializes a 2D array, then each entry is associated 
             with a complex number in the complex plane. Color is obtained by iterating 
@@ -31,12 +52,23 @@
   </div>
 
   <div class="row">
-    <div class="col-md-5">
+    <div class="col-xs-12 col-md-7">
       <div class="hero-container">
         <div class="hero-content">
-          <p class="break"></p>
-          <h1 style="font-size: 48px; word-spacing:0px; font-family: Canela Deck; text-align: center;">Graph Coloring</h1>
-          <p style="font-size: 16px; word-spacing: -1px; font-family: Canela Deck; text-align: justify;">
+          <div class="video-wrapper">
+            <video controls>
+              <source src="{{ site.baseurl }}/assets/graph-4K.mov" type="video/quicktime">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-12 col-md-5">
+      <div class="hero-container">
+        <div class="hero-content">
+          <h1 style="font-size: 40px; word-spacing:0px; font-family: Canela Deck; text-align: center;">Graph Coloring</h1>
+          <p style="font-size: 15px; text-align: justify;">
             A Java program that finds all possible graphs on n vertices with coloring up to k colors, up to isomorphism. 
             Each graph found can be pretty-printed using latex.
             
@@ -46,36 +78,26 @@
         </div>
       </div>
     </div>
-    <div class="col-md-7">
-      <div class="hero-container">
-        <div class="hero-content">
-          <video width="640" height="480" controls>
-              <source src="{{ site.baseurl }}/assets/graph-4K.mov" type="video/quicktime">
-              Your browser does not support the video tag.
-          </video>
-        </div>
-      </div>
-    </div>
   </div>
 
   <div class="row">
-    <div class="col-md-7">
+    <div class="col-xs-12 col-md-7">
       <div class="hero-container">
         <div class="hero-content">
-          <video width="640" height="480" controls>
+          <div class="video-wrapper">
+            <video controls>
               <source src="{{ site.baseurl }}/assets/connect4-4K-4K.mov" type="video/quicktime">
               Your browser does not support the video tag.
-          </video>
+            </video>
+          </div>
         </div>
       </div>
     </div>
-    <div class="col-md-5">
+    <div class="col-xs-12 col-md-5">
       <div class="hero-container">
         <div class="hero-content">
-          <p class="break"></p>
-          <p class="break"></p>
-          <h1 style="font-size: 48px; word-spacing:0px; font-family: Canela Deck; text-align: center;">Connect4</h1>
-          <p style="font-size: 16px; word-spacing: -1px; font-family: Canela Deck; text-align: justify;">
+          <h1 style="font-size: 40px; word-spacing:0px; font-family: Canela Deck; text-align: center;">Connect4</h1>
+          <p style="font-size: 15px; text-align: justify;">
             A C++ implementation of the game Connect 4 and a competitive AI named zephyr using tree search, convolution, 
             and alpha-beta pruning. Players can select from a difficulty of 1 - 9, which is the search depth of the AI.
           </p>
