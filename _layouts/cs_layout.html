@@ -10,9 +10,9 @@
             CS Projects
           </h1>
           <p class="text-center">
-            Here you will find a collection of small programming projects that I have 
+            Here you will find a collection of small programming projects I have 
             created. I have always been passionate about coding and love to take on new 
-            challenges. Take a look at the demos! I welcome any feedback you may have.
+            challenges. Take a look at the demos! Any feedback is welcomed.
           </p>
         </div>
       </div>
@@ -21,6 +21,48 @@
 </div>
 
 <div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-md-7">
+      <div class="hero-container">
+        <div class="hero-content">
+          <div class="video-wrapper">
+            <video controls>
+              <source src="{{ site.baseurl }}/assets/newconnect4-4K.mov" type="video/quicktime">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-12 col-md-5">
+      <div class="hero-container">
+        <div class="hero-content">
+          <h1 style="font-size: 40px; word-spacing:0px; font-family: Canela Deck; text-align: center;">Connect4</h1>
+          <p style="font-size: 15px; text-align: justify;">
+            A Connect 4 terminal game written in C++, featuring PVP and PVE 
+            against a competitive AI named Zephyr. Zephyr uses convolution 
+            to detect patterns
+            and tree search (alpha-beta pruning) to make decisions. Each round
+            there is an emoji to indicate its "feelings" towards the chance of 
+            winning.
+            Using 
+            multi-threading, it can search upto 11 layers down the tree 
+            within a satisfactory amount of time. I used ANSI escape codes to 
+            color the UI and make it more player-friendly.
+          </p>
+          <p style="font-size: 15px; text-align: justify;">
+            To run the game, simply enter terminal commands as demonstrated 
+            in the video. For player arguments, the game automatically 
+            recognizes numbers between 1 and 11 as AI levels and string-like inputs 
+            as human players' names. Human players type a number to indicate 
+            the column for the next checker, and can undo their last move 
+            by pressing 0.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div class="row">
     <div class="col-xs-12 col-md-7">
       <div class="hero-container">
@@ -80,31 +122,7 @@
     </div>
   </div>
 
-  <div class="row">
-    <div class="col-xs-12 col-md-7">
-      <div class="hero-container">
-        <div class="hero-content">
-          <div class="video-wrapper">
-            <video controls>
-              <source src="{{ site.baseurl }}/assets/connect4-4K-4K.mov" type="video/quicktime">
-              Your browser does not support the video tag.
-            </video>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-xs-12 col-md-5">
-      <div class="hero-container">
-        <div class="hero-content">
-          <h1 style="font-size: 40px; word-spacing:0px; font-family: Canela Deck; text-align: center;">Connect4</h1>
-          <p style="font-size: 15px; text-align: justify;">
-            A C++ implementation of the game Connect 4 and a competitive AI named zephyr using tree search, convolution, 
-            and alpha-beta pruning. Players can select from a difficulty of 1 - 9, which is the search depth of the AI.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
+
 
 
   

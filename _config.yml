@@ -13,10 +13,9 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: "Hi"
+title: "Lixing Wang"
 email: 'lixing_wang@brown.edu'
-description: "Welcome to my site! As a student at Brown with a passion for Math-CS and Music, 
-I am excited to share my insights with you. I believe that technology is a huge enabler that drives creativity and empower individuals. Browse through my portfolio to learn more about me."
+description: "Portfolio"
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://lixing-w.github.io" # the base hostname & protocol for your site, e.g. https://example.com
 
@@ -93,7 +92,7 @@ pagination:
 ############################################################
 
 ### Phantom settings
-footer_text: 'Updated Jun 20 2024. <br> This site is still under construction.'
+footer_text: 'Updated Aug 20 2024. <br> This site is still under construction.'
 admin_name: 'Lixing Wang'
 google_analytics: "" # Update with your own tracking ID
 enable_contact: false
