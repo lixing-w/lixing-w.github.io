@@ -92,7 +92,8 @@ button.btn, input.btn {
   background-color: white;
   border-left: solid 1px #cedfea;
   border-right: solid 1px #cedfea;
-  width: 80%;
+  max-width: 1400px;
+  width: 100%;
   &.container {
     padding: 0;
   }
@@ -133,7 +134,7 @@ video {
   align-items: center; /* vertical centering */
   justify-content: center; /* horizontal centering */
 
-  margin: 4em 0em 4em 0em;
+
   @include bp-xsmall {
     flex-direction: column;
   }
@@ -146,36 +147,26 @@ video {
 }
 
 .hero-content {
-  width: 80%;
+  width: 100%;
+  max-width: 1200px;
   box-sizing: border-box;
   margin: 0 2em;
   padding: 20px;
   display: block;
-  @include bp-medium {
-    width: 90%;
-  }
-  @include bp-small {
-    width: 100%;
-  }
-  @include bp-xsmall {
-    width: 100%;
-  }
   h1 {
     font-size: 48px;
   }
   p {
     margin: 10px auto;
-    font-size: 18px;
-    width: 100%;
+    font-size: 17px;
+    width: 90%;
     word-wrap: break-word;
     overflow-wrap: break-word;
     @include bp-xsmall {
       font-size: 15px;
-      width: 80%;
     }
     @include bp-small {
       font-size: 15px;
-      width: 80%;
     }
     @include bp-medium {
       font-size: 16px;
