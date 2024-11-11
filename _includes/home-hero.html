@@ -1,46 +1,31 @@
-<div class="container">
+<div class="hero-container">
 
-  <div class="row">
+  <div class="hero-content">
 
-    <div class="col-md-12">
-
-      <div class="hero-container">
-
-        <div class="hero-content">
-
-          <div class="break">
-          </div>
-          {% if site.title != '' %}
-          <h1 class="text-center">{{site.title}}</h1>
-          {% endif %}
-
-          {% if site.description != '' or site.enable_contact == true %}
-          <p class="text-center">
-            Welcome to my inventory!
-            
-            Here you can find some CS projects and 
-            original music of mine, as well as my full resume.
-
-            {% if site.enable_contact == true %}
-            {% include contact.html %}
-            {% include contact-modal.html %}
-            {% endif %}
-          </p>
-          {% endif %}
-
-          <div class="hero-buttons">
-              <a href="{{ site.url }}/resume"><button class="btn btn-default btn-lg"><i class="fa fa-folder" aria-hidden="true"></i>Resume</button></a>
-              <a href="{{ site.url }}/cs"><button class="btn btn-default btn-lg"><i class="fa fa-terminal" aria-hidden="true"></i>CS</button></a>
-              <a href="{{ site.url }}/music"><button class="btn btn-default btn-lg"><i class="fa fa-headphones" aria-hidden="true"></i>Music</button></a>
-
-          </div>
-
-        </div>
-
-      </div>
-
+    <div class="break">
     </div>
+    {% if site.title != '' %}
+    <h1 class="text-center">{{site.title}}</h1>
+    {% endif %}
 
+    {% if site.description != '' or site.enable_contact == true %}
+    <p class="text-center">
+      Welcome to my inventory!
+      
+      Here you can find some CS projects and 
+      original music of mine, as well as my full resume.
+
+      {% if site.enable_contact == true %}
+      {% include contact.html %}
+      {% include contact-modal.html %}
+      {% endif %}
+    </p>
+    {% endif %}
+
+    <div class="hero-buttons">
+        <a href="{{ site.url }}/resume"><button class="btn btn-default btn-lg"><i class="fa fa-folder" aria-hidden="true"></i>Resume</button></a>
+        <a href="{{ site.url }}/cs"><button class="btn btn-default btn-lg"><i class="fa fa-terminal" aria-hidden="true"></i>CS</button></a>
+        <a href="{{ site.url }}/music"><button class="btn btn-default btn-lg"><i class="fa fa-headphones" aria-hidden="true"></i>Music</button></a>
+    </div>
   </div>
-
 </div>

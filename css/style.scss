@@ -135,19 +135,25 @@ video {
 
   margin: 4em 0em 4em 0em;
   @include bp-xsmall {
-    margin: 4em 0em 4em 0em;
+    flex-direction: column;
   }
   @include bp-small {
-    margin: 4em 0em 4em 0em;
+    flex-direction: column;
+  }
+  @include bp-medium {
+    flex-direction: column;
   }
 }
 
 .hero-content {
   width: 80%;
-  margin: 0 auto;
-  display: table;
+  max-width: 80%;
+  box-sizing: border-box;
+  margin: 0 2em;
+  padding: 20px;
+  display: block;
   @include bp-medium {
-    width: 100%;
+    width: 90%;
   }
   @include bp-small {
     width: 100%;
@@ -159,7 +165,10 @@ video {
     font-size: 48px;
   }
   p {
-    margin: 2em 0 4em 0;
+    margin: 10px auto;
+    width: 100%;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
   }
   .hero-buttons {
     margin: 0 auto;
@@ -349,6 +358,13 @@ video {
   margin-top: 2em;
   border-top: 1px solid #efefef;
   padding: 1em 0;
+  display: flex;
+  .container {
+    display: flex;
+    @include bp-xsmall {
+      display: block;
+    }
+  }
   p {
     font-size: 12px;
     font-weight: 600;
