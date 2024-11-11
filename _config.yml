@@ -92,7 +92,7 @@ pagination:
 ############################################################
 
 ### Phantom settings
-footer_text: 'Updated Sep 15 2024. <br> This site is still under construction.'
+footer_text: 'Updated Nov 11 2024.' #<br> This site is still under construction.
 admin_name: 'Lixing Wang'
 google_analytics: "" # Update with your own tracking ID
 enable_contact: false
