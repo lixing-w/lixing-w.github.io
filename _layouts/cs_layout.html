@@ -10,8 +10,8 @@
             CS Projects
           </h1>
           <p class="text-center">
-            Here you will find a collection of small programming projects I have 
-            created. Take a look at the demos! Any feedback is welcomed.
+            Here you will find a collection of programming projects I have 
+            created. Take a look at the demos! Welcome any feedback.
           </p>
         </div>
       </div>
@@ -62,8 +62,6 @@
     </div>
   </div>
 
-
-
   <div class="row">
     <div class="col-xs-12 col-md-7">
       <div class="hero-container">
@@ -89,6 +87,35 @@
             as a part of my graph theory course midterm paper.
 
             <a href="{{ site.url }}/assets/graph.pdf"><button class="btn btn-default btn-lg"><i class="fa fa-file-pdf-o" aria-hidden="true"></i>View Paper</button></a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12 col-md-7">
+      <div class="hero-container">
+        <div class="hero-content">
+          <div class="video-wrapper">
+            <video controls>
+              <source src="{{ site.baseurl }}/assets/shell.mov" type="video/quicktime">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-12 col-md-5">
+      <div class="hero-container">
+        <div class="hero-content">
+          <h1 style="font-size: 40px; word-spacing:0px; font-family: Canela Deck; text-align: center;">Shell</h1>
+          <p style="font-size: 15px; text-align: justify;">
+            A shell written in C that supports running programs, job management, io redirection, signal handling, and a number of built-in commands such 
+            as cd, rm, jobs, fg and bg. For io redirection, the shell looks for redirection symbols and closes and opens necessary file descriptors before calling 
+            fork() to initiate a child process. Signal handling is done by using signal(), and reaping, happening each time before prompting for a new command, 
+            is done by iterating through a job list, calling waitpid(), and printing useful messages according to the exit status. Extensive error checking for 
+            user input and system calls.
           </p>
         </div>
       </div>
