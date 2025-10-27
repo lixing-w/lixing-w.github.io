@@ -39,7 +39,7 @@ export default function Home() {
           <p>
             I code and I compose. I believe the best work comes from the intersection of
             technical depth and creative vision. Whether it's building intelligent systems,
-            creating music, or crafting real-time audio tools—I'm passionate about projects
+            creating music, or crafting real-time audio tools. I'm passionate about projects
             that challenge both sides of my brain.
           </p>
           <p style={{ marginTop: '2rem', color: 'var(--text-secondary)' }}>
@@ -136,6 +136,9 @@ export default function Home() {
               My first vocaloid composition combining mysterious atmosphere with catchy synth melodies.
               I composed, produced, and created the music video entirely myself using Stable Diffusion
               for AI-generated artwork. 
+            </p>
+            <p>
+              The song ranked 14th in <br /> <a href="https://www.bilibili.com/opus/1105740885194178560">Bili_Board Vocaloid Weekly Charts (Week 24, August 27, 2025 - Issue 64).</a>
             </p>
             <p>
               <strong>Behind the Scenes:</strong> ~40 hours of production | Composition,  
@@ -340,10 +343,10 @@ export default function Home() {
             <a href="https://github.com/lixing-w" target="_blank" rel="noopener noreferrer">
               GitHub
             </a>
-            <a href="https://www.linkedin.com/in/lixing-wang" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.linkedin.com/in/lixing-wang-b11a852b0/" target="_blank" rel="noopener noreferrer">
               LinkedIn
             </a>
-            <a href="https://bilibili.com" target="_blank" rel="noopener noreferrer">
+            <a href="https://space.bilibili.com/80270727" target="_blank" rel="noopener noreferrer">
               Bilibili
             </a>
           </div>
