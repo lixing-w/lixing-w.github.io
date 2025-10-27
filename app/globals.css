@@ -33,6 +33,7 @@ body {
 
 nav {
   color: #FFFFFF;
+  transition: all 0.3s ease;
 }
 
 /* if dark mode? */
@@ -57,11 +58,13 @@ section {
   text-align: center;
   position: relative;
   z-index: 2;
+  transition: all 0.3s ease;
 }
 
 h1, h2, h3 {
   font-weight: 700;
   margin-bottom: 1rem;
+  transition: all 0.3s ease;
 }
 
 h1 {
@@ -86,6 +89,7 @@ p {
   color: var(--text-secondary);
   margin-bottom: 1rem;
   max-width: 800px;
+  transition: all 0.3s ease;
 }
 
 /* Navigation */
@@ -140,7 +144,7 @@ canvas {
 }
 
 .project:hover {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.3);
   border: 1px solid rgba(0, 212, 255, 0.5);
   /* transform: translateY(-5px); */
   backdrop-filter: blur(60px);
@@ -176,7 +180,8 @@ canvas {
 /* Video Embed */
 .video-container-inblock {
   position: relative;
-  max-width: 900px;
+  width: 84vw;
+  max-width: 832px;
   margin: 1.5rem auto;
   aspect-ratio: 1260 / 816;
   border-radius: 12px;
@@ -243,24 +248,33 @@ footer a:hover {
   text-decoration: underline;
 }
 
-/* Responsive */
+/* Responsive, smaller devices */
 @media (max-width: 768px) {
   h1 {
     font-size: 2rem;
+    transition: all 0.3s ease;
   }
   
   h2 {
     font-size: 1.5rem;
+    transition: all 0.3s ease;
+  }
+
+  p {
+    font-size: 1rem;
+    transition: all 0.3s ease;
   }
   
   section {
     padding: 4rem 1rem;
+    transition: all 0.3s ease;
   }
   
   nav {
     flex-wrap: wrap;
     gap: 1rem;
-    justify-content: flex-start;
+    justify-content: center;
     overflow-x: auto;
+    transition: all 0.3s ease;
   }
 }

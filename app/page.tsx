@@ -23,7 +23,7 @@ export default function Home() {
       
       <nav>
         <a onClick={() => scrollToSection('hero')}>Home</a>
-        <a onClick={() => scrollToSection('cs-projects')}>CS Projects</a>
+        <a onClick={() => scrollToSection('cs-projects')}>CS</a>
         <a onClick={() => scrollToSection('music')}>Music</a>
         <a onClick={() => scrollToSection('max')}>Max/MSP</a>
         <a onClick={() => scrollToSection('contact')}>Contact</a>
