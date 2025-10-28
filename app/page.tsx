@@ -1,10 +1,14 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
+import { InlineMath } from 'react-katex';
 import MorphingBackground from './components/MorphingBackground';
 
 export default function Home() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const keysPressed = useRef<{ [key: string]: boolean }>({});
+  const scrollVelocity = useRef(0);
+  const animationFrameId = useRef<number | null>(null);
 
   useEffect(() => {
     if (canvasRef.current) {
@@ -12,9 +16,62 @@ export default function Home() {
     }
   }, []);
 
+  useEffect(() => {
+    const scrollSpeed = 50; // pixels per frame
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+        e.preventDefault();
+        keysPressed.current[e.key] = true;
+      }
+    };
+
+    const handleKeyUp = (e: KeyboardEvent) => {
+      if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+        keysPressed.current[e.key] = false;
+      }
+    };
+
+    const scroll = () => {
+      let newVelocity = 0;
+
+      if (keysPressed.current['ArrowDown']) {
+        newVelocity += scrollSpeed;
+      }
+      if (keysPressed.current['ArrowUp']) {
+        newVelocity -= scrollSpeed;
+      }
+
+      if (newVelocity !== 0) {
+        window.scrollBy(0, newVelocity);
+      }
+
+      animationFrameId.current = requestAnimationFrame(scroll);
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    window.addEventListener('keyup', handleKeyUp);
+    animationFrameId.current = requestAnimationFrame(scroll);
+
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+      window.removeEventListener('keyup', handleKeyUp);
+      if (animationFrameId.current !== null) {
+        cancelAnimationFrame(animationFrameId.current);
+      }
+    };
+  }, []);
+
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     element?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const handleNavKeyDown = (e: React.KeyboardEvent, id: string) => {
+    if (e.key === 'Enter' || e.key === ' ') { // if enter or space is pressed
+      e.preventDefault();
+      scrollToSection(id);
+    }
   };
 
   return (
@@ -22,11 +79,11 @@ export default function Home() {
       <canvas ref={canvasRef} />
       
       <nav>
-        <a onClick={() => scrollToSection('hero')}>Home</a>
-        <a onClick={() => scrollToSection('cs-projects')}>CS</a>
-        <a onClick={() => scrollToSection('music')}>Music</a>
-        <a onClick={() => scrollToSection('max')}>Max/MSP</a>
-        <a onClick={() => scrollToSection('contact')}>Contact</a>
+        <a onClick={() => scrollToSection('hero')} onKeyDown={(e) => handleNavKeyDown(e, 'hero')} tabIndex={0} role="button">Home</a>
+        <a onClick={() => scrollToSection('cs-projects')} onKeyDown={(e) => handleNavKeyDown(e, 'cs-projects')} tabIndex={0} role="button">CS</a>
+        <a onClick={() => scrollToSection('music')} onKeyDown={(e) => handleNavKeyDown(e, 'music')} tabIndex={0} role="button">Music</a>
+        <a onClick={() => scrollToSection('max')} onKeyDown={(e) => handleNavKeyDown(e, 'max')} tabIndex={0} role="button">Max/MSP</a>
+        <a onClick={() => scrollToSection('contact')} onKeyDown={(e) => handleNavKeyDown(e, 'contact')} tabIndex={0} role="button">Contact</a>
       </nav>
 
       <main>
@@ -49,13 +106,13 @@ export default function Home() {
 
         {/* CS PROJECTS */}
         <section id="cs-projects">
-          <h2>CS Projects</h2>
+          <h2 tabIndex={0}>CS Projects</h2>
 
           {/* CERN Research */}
           <div className="project">
             <h3>LGAD Performance Characterization with ML</h3>
             <p className="project-meta">
-              Research with CERN | Prof. Gaetano Barone
+              Research with CERN | Prof. Gaetano Barone | Jun 2025 - Present
             </p>
             <p>
               Developed a comprehensive system to characterize Low-Gain Avalanche Detector (LGAD) 
@@ -65,24 +122,26 @@ export default function Home() {
               <strong>Key Contributions:</strong>
             </p>
             <ul style={{ textAlign: 'left', marginLeft: '2rem', color: 'var(--text-secondary)' }}>
-              <li>Built a robust database management system handling 10,000+ scan curves</li>
-              <li>Implemented RANSAC-based outlier rejection achieving 98.5% accuracy in curve fitting</li>
+              <li>Built a robust database management system handling 400+ scan curves from 29 detectors</li>
+              <li>Implemented RANSAC-based outlier rejection to achieve noise-robustness in curve fitting</li>
               <li>Designed and trained conditional autoencoder to predict detector response across temperature, humidity, and bias voltage ranges</li>
-              <li>Model predictions showed 94.2% correlation with experimental data</li>
+              <li>Model predictions showed <InlineMath math="R^2 = 0.99" /> on linear correlation between breakdown voltage and temperature</li>
+              <li>Model reconstructs training curves with <InlineMath math="RMSE = 0.090" /> and showed a <InlineMath math="4.9\%" /> slope error compared to training data</li>
+              <li>Research presented on CERN DRD3 WG2 Meeting in October 2025</li>
             </ul>
             <p style={{ marginTop: '1rem' }}>
-              <strong>Tech Stack:</strong> Python, PyTorch, Pandas, RANSAC
+              <strong>Tech Stack:</strong> Python, PyTorch, RANSAC
             </p>
           </div>
 
           {/* DJMAX AI */}
-          <div className="project">
+          <div className="project" tabIndex={0}>
             <h3>DJMAX Rhythm Game AI Player</h3>
             <p className="project-meta">
-              Term Project | Team: Me, Jonie Nishimura, Tiffay Gao.
+              Term Project | Team: Me, Jonie Nishimura, Tiffay Gao. | May 2025
             </p>
             <p>
-              Built a real-time AI player for <i>DJMAX Respect V</i>, a world-famous rhythm game, using deep learning.
+              Built a real-time AI player for <i>DJMAX Respect V</i>, a world-famous rhythm game, using deep learning in 2 weeks.
               The system outstrips average human performance, consistently scoring above 97% accuracy.
             </p>
             <p>
@@ -107,14 +166,15 @@ export default function Home() {
               </iframe>
             </div>
             <p style={{ marginTop: '1rem', fontSize: 'var(--font-size-base)'}}>
-                More demos can be found on <a href="https://drive.google.com/drive/folders/1wsH6CuSxASzPQl1X4VYxtIIR43HAku2k?usp=share_link">Google Drive</a>
+                More demos can be found on <a href="https://drive.google.com/drive/folders/1wsH6CuSxASzPQl1X4VYxtIIR43HAku2k?usp=share_link" tabIndex={0}>Google Drive</a>
             </p>
             <p style={{ marginTop: '1rem' }}>
               <strong>Tech Stack:</strong> Python, PyTorch, OpenCV, NumPy
             </p>
-            <p style={{ marginTop: '1rem', fontSize: 'var(--font-size-base)' }}>
+            <p>
               <strong>Team Roles:</strong> 
-              <br />
+            </p>
+            <p style={{ marginTop: '1rem', fontSize: 'var(--font-size-base)' }}>
               <strong>Lixing Wang (Me):</strong> Model architecture & loss function design, data collection pipeline (capture.py), dataset implementation (dataset.py), inference optimization, real-time gameplay testing.
               <br />
               <strong>Tiffany Gao:</strong> Model training & evaluation, core model implementation (model.py, train.py, test.py), video dataset class design, visualization & graphing.
@@ -126,11 +186,11 @@ export default function Home() {
 
         {/* MUSIC */}
         <section id="music">
-          <h2>Music Works</h2>
+          <h2 tabIndex={0}>Music Works</h2>
 
           {/* Featured Song */}
-          <div className="music-item">
-            <h3>Masquerade feat. KAFU</h3>
+          <div className="music-item" tabIndex={0}>
+            <h3 tabIndex={0}>Masquerade feat. KAFU</h3>
             <p className="project-meta">Latest Release | 2025</p>
             <p>
               My first vocaloid composition combining mysterious atmosphere with catchy synth melodies.
@@ -138,7 +198,7 @@ export default function Home() {
               for AI-generated artwork. 
             </p>
             <p>
-              The song ranked 14th in <br /> <a href="https://www.bilibili.com/opus/1105740885194178560">Bili_Board Vocaloid Weekly Charts (Week 24, August 27, 2025 - Issue 64).</a>
+              The song ranked 14th in <br /> <a href="https://www.bilibili.com/opus/1105740885194178560" tabIndex={0}>Bili_Board Vocaloid Weekly Charts (Week 24, August 27, 2025 - Issue 64).</a>
             </p>
             <p>
               <strong>Behind the Scenes:</strong> ~40 hours of production | Composition,  
@@ -301,17 +361,17 @@ export default function Home() {
             
             <div>
               <h3 style={{ color: 'var(--accent-1)', fontSize: 'var(--font-size-lg)' }}>ML/AI</h3>
-              <p>PyTorch • Deep Learning • Computer Vision • RANSAC</p>
+              <p>PyTorch • Deep Learning • Computer Vision</p>
             </div>
             
             <div>
               <h3 style={{ color: 'var(--accent-1)', fontSize: 'var(--font-size-lg)' }}>Web & Tools</h3>
-              <p>React • Next.js • Database Design • Git</p>
+              <p>React • Next.js • Node.js • Git</p>
             </div>
             
             <div>
               <h3 style={{ color: 'var(--accent-1)', fontSize: 'var(--font-size-lg)' }}>Music Production</h3>
-              <p>Composition • Vocaloid • Max/MSP • DAW</p>
+              <p>Composition • Production • Vocaloid • Max/MSP • Logic</p>
             </div>
             
             <div>
@@ -321,32 +381,32 @@ export default function Home() {
             
             <div>
               <h3 style={{ color: 'var(--accent-1)', fontSize: 'var(--font-size-lg)' }}>Courses Taken</h3>
-              <p>Algorithm Design • Real-time Systems • Software Engineering</p>
+              <p>Algorithm Design • Deep Learning • Real-time Systems • Software Engineering</p>
             </div>
           </div>
         </section>
 
         {/* CONTACT */}
         <section id="contact">
-          <h2>Let's Connect</h2>
+          <h2 tabIndex={0}>Let's Connect</h2>
           
           <div style={{ margin: '2rem 0' }}>
-            <a href="mailto:lixing_wang@brown.edu" className="btn">
+            <a href="mailto:lixing_wang@brown.edu" className="btn" tabIndex={0}>
               Email Me
             </a>
-            <a href="/resume.pdf" className="btn">
+            <a href="/resume.pdf" className="btn" tabIndex={0}>
               Download Resume
             </a>
           </div>
 
           <div style={{ margin: '2rem 0', display: 'flex', gap: '2rem', justifyContent: 'center' }}>
-            <a href="https://github.com/lixing-w" target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/lixing-w" target="_blank" rel="noopener noreferrer" tabIndex={0}>
               GitHub
             </a>
-            <a href="https://www.linkedin.com/in/lixing-wang-b11a852b0/" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.linkedin.com/in/lixing-wang-b11a852b0/" target="_blank" rel="noopener noreferrer" tabIndex={0}>
               LinkedIn
             </a>
-            <a href="https://space.bilibili.com/80270727" target="_blank" rel="noopener noreferrer">
+            <a href="https://space.bilibili.com/80270727" target="_blank" rel="noopener noreferrer" tabIndex={0}>
               Bilibili
             </a>
           </div>

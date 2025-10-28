@@ -22,6 +22,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
 body {
@@ -59,6 +60,12 @@ section {
   position: relative;
   z-index: 2;
   transition: all 0.3s ease;
+}
+
+/* Make contact section more compact */
+#contact {
+  min-height: 80vh;
+  padding: 4rem 2rem;
 }
 
 h1, h2, h3 {
@@ -118,6 +125,24 @@ nav a {
 
 nav a:hover {
   color: var(--accent-1);
+}
+
+/* Focus styles for keyboard navigation */
+a:focus,
+button:focus {
+  outline: 2px solid var(--accent-1);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+nav a:focus {
+  outline: 2px solid var(--accent-1);
+  outline-offset: 4px;
+}
+
+.btn:focus {
+  outline: 2px solid var(--accent-1);
+  outline-offset: 4px;
 }
 
 /* Animated Background Canvas */
@@ -239,13 +264,23 @@ footer {
 }
 
 footer a {
-  color: var(--accent-1);
-  text-decoration: none;
   margin: 0 1rem;
 }
 
-footer a:hover {
+/* Links */
+a {
+  color: var(--accent-3);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+a:hover {
+  color: var(--accent-3);
   text-decoration: underline;
+}
+
+a:visited {
+  color: var(--accent-3);
 }
 
 /* Responsive, smaller devices */
