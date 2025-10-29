@@ -112,22 +112,23 @@ export default function Home() {
           <div className="project">
             <h3>LGAD Performance Characterization with ML</h3>
             <p className="project-meta">
-              Research with CERN | Prof. Gaetano Barone | Jun 2025 - Present
+              Research with CERN | Advisor: Prof. Gaetano Barone | Jun 2025 - Present
             </p>
             <p>
               Developed a comprehensive system to characterize Low-Gain Avalanche Detector (LGAD) 
-              performance under environmental stress factors using machine learning.
+              performance under environmental stress factors using machine learning. Working with post-docs 
+              and grad students on data collection and detector manufacturing.
             </p>
             <p>
               <strong>Key Contributions:</strong>
             </p>
             <ul style={{ textAlign: 'left', marginLeft: '2rem', color: 'var(--text-secondary)' }}>
               <li>Built a robust database management system handling 400+ scan curves from 29 detectors</li>
-              <li>Implemented RANSAC-based outlier rejection to achieve noise-robustness in curve fitting</li>
+              <li>Proposed and implemented RANSAC-based curve fitting and linear interpolation to achieve noise-robustness and better resolution in curve analysis</li>
               <li>Designed and trained conditional autoencoder to predict detector response across temperature, humidity, and bias voltage ranges</li>
               <li>Model predictions showed <InlineMath math="R^2 = 0.99" /> on linear correlation between breakdown voltage and temperature</li>
-              <li>Model reconstructs training curves with <InlineMath math="RMSE = 0.090" /> and showed a <InlineMath math="4.9\%" /> slope error compared to training data</li>
-              <li>Research presented on CERN DRD3 WG2 Meeting in October 2025</li>
+              <li>Model reconstructs training curves with <InlineMath math="RMSE = 0.090" /> and showed a low <InlineMath math="4.9\%" /> slope error compared to training data</li>
+              <li>Research presented on CERN DRD3 WG2 Meeting in October 2025, and CPAD 2025 at Penn</li>
             </ul>
             <p style={{ marginTop: '1rem' }}>
               <strong>Tech Stack:</strong> Python, PyTorch, RANSAC
@@ -151,7 +152,7 @@ export default function Home() {
               <li>Collected and curated 139,500 training frames through gameplay</li>
               <li>Designed ResNet18 + GRU architecture for temporal pattern recognition</li>
               <li>Engineered custom loss function balancing precision and timing accuracy</li>
-              <li>Optimized model to run at ~45 FPS locally with 97% average accuracy</li>
+              <li>Optimized model to run at ~45 FPS in real time with 97% average accuracy</li>
             </ul>
             <p style={{ marginTop: '1rem' }}>
               <strong>Demo Video:</strong>
@@ -165,6 +166,11 @@ export default function Home() {
               >
               </iframe>
             </div>
+            <p style={{ marginTop: '1rem', fontSize: 'var(--font-size-base)'}}>
+                This video shows the AI playing the song "L" in real-time on a MacBook with M3 Max chip. 
+                The AI triggers the keys automatically without human input, 
+                consistently catching fast paced notes with high accuracy, and breaks my personal record at the end.
+            </p>
             <p style={{ marginTop: '1rem', fontSize: 'var(--font-size-base)'}}>
                 More demos can be found on <a href="https://drive.google.com/drive/folders/1wsH6CuSxASzPQl1X4VYxtIIR43HAku2k?usp=share_link" tabIndex={0}>Google Drive</a>
             </p>
@@ -221,12 +227,13 @@ export default function Home() {
             <h3>Discography</h3>
             <p>Released on Spotify, Apple Music, NetEase Music, and other platforms.</p>
             
-            <h4 style={{ marginTop: '2rem', color: 'var(--accent-2)' }}>EVERWIND</h4>
+            <h4 style={{ marginTop: '2rem', color: 'var(--accent-2)' }}><a href="https://open.spotify.com/album/5YcmMfCioLzhn9hN7e1Lxo">EVERWIND</a></h4>
             <p style={{ fontSize: 'var(--font-size-base)' }}>
               Japanese ACG-inspired electronic music (Kawaii Bass) with energetic synths and infectious beats.
               <br />
               Late 2024 to Early 2025 production.
             </p>
+            <p style={{ fontSize: 'var(--font-size-sm)' }}> If the player doesn't load, click the pink title above to access on Spotify.</p>
             <iframe 
               data-testid="embed-iframe" 
               style={{ borderRadius: '12px', margin: '1rem 0' }}
@@ -239,7 +246,7 @@ export default function Home() {
               loading="lazy">
             </iframe>
 
-            <h4 style={{ marginTop: '2rem', color: 'var(--accent-2)' }}>Telescope</h4>
+            <h4 style={{ marginTop: '2rem', color: 'var(--accent-2)' }}><a href="https://open.spotify.com/album/1mhELS8TIXMlH8IzZ8DOyg">Telescope</a></h4>
             <p style={{ fontSize: 'var(--font-size-base)' }}>
               First released album as KONOHA' Sakurai. 
               <br />
@@ -257,7 +264,7 @@ export default function Home() {
               loading="lazy">
             </iframe>
 
-            <h4 style={{ marginTop: '2rem', color: 'var(--accent-2)' }}>Featured: Echoes of Summer</h4>
+            <h4 style={{ marginTop: '2rem', color: 'var(--accent-2)' }}><a href="https://open.spotify.com/album/5h32lZHHXLd5nwsQsXr79J">Featured: Echoes of Summer</a></h4>
             <p style={{ fontSize: 'var(--font-size-base)' }}>
               Featured artist on this collaborative album. I produced the second track.
               <br />
@@ -310,7 +317,7 @@ export default function Home() {
             </p>
             <p>
               <strong>Skills:</strong> Composition, Arrangement, Production, Music Video Direction, 
-              AI-assisted Visual Design, Vocaloid Synthesis
+              AI-assisted Visual Design, Vocaloid Synthesis, Logic Pro
             </p>
           </div>
         </section>
@@ -321,20 +328,29 @@ export default function Home() {
           <p>Creative signal processing and real-time audio manipulation tools built in Cycling Max 9.</p>
 
           <div className="music-item">
-            <h3>Patch Name: [Your Patch]</h3>
-            <p className="project-meta">Real-time Audio Processing</p>
+            <h3>Multi-effect Delay Loop</h3>
             <p>
-              [Description of what your patch does, creative applications, inspiration]
+              This patch creates a multi-effect delay loop, allowing for intricate sound design and live performance manipulation. 
+              It features a random sampling buffer, delay loop with overdrive and pitchshift feedback, stereo widening, and randomized EQ, creating a rich, evolving soundscape.
             </p>
             
-            <p style={{ marginTop: '2rem', fontWeight: 600 }}>Patch Interface:</p>
+            <p style={{ marginTop: '2rem', fontWeight: 600 }}>Patch Interface</p>
             <img
-              src="/max-patch-screenshot.png"
-              alt="Max Patch"
+              src="/delay_loop_presentation.png"
+              alt="Max Patch Multi-effect Delay Loop Presentation Mode Screenshot"
               style={{
-                maxWidth: '100%',
+                maxWidth: '80%',
                 borderRadius: '12px',
-                border: '1px solid rgba(0, 212, 255, 0.2)',
+                margin: '1rem 0',
+              }}
+            />
+            <p style={{ marginTop: '2rem', fontWeight: 600 }}>Patch Implementation</p>
+                        <img
+              src="/delay_loop.png"
+              alt="Max Patch Multi-effect Delay Loop Screenshot"
+              style={{
+                maxWidth: '80%',
+                borderRadius: '12px',
                 margin: '1rem 0',
               }}
             />
@@ -371,7 +387,7 @@ export default function Home() {
             
             <div>
               <h3 style={{ color: 'var(--accent-1)', fontSize: 'var(--font-size-lg)' }}>Music Production</h3>
-              <p>Composition • Production • Vocaloid • Max/MSP • Logic</p>
+              <p>Composition • Production • CEVIO AI • Max/MSP • Logic</p>
             </div>
             
             <div>
@@ -381,7 +397,7 @@ export default function Home() {
             
             <div>
               <h3 style={{ color: 'var(--accent-1)', fontSize: 'var(--font-size-lg)' }}>Courses Taken</h3>
-              <p>Algorithm Design • Deep Learning • Real-time Systems • Software Engineering</p>
+              <p>Algorithm Design • Deep Learning • Real-time Music Systems • Software Engineering</p>
             </div>
           </div>
         </section>

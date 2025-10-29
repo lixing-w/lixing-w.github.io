@@ -8,6 +8,7 @@
   --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   --font-size-base: 16px;
+  --font-size-sm: 0.875rem;
   --font-size-lg: 1.25rem;
   --font-size-xl: 1.5rem;
   --font-size-2xl: 2rem;
@@ -128,19 +129,14 @@ nav a:hover {
 }
 
 /* Focus styles for keyboard navigation */
-a:focus,
-button:focus {
+a:focus-visible,
+button:focus-visible {
   outline: 2px solid var(--accent-1);
   outline-offset: 2px;
   border-radius: 4px;
 }
 
-nav a:focus {
-  outline: 2px solid var(--accent-1);
-  outline-offset: 4px;
-}
-
-.btn:focus {
+.btn:focus-visible {
   outline: 2px solid var(--accent-1);
   outline-offset: 4px;
 }
