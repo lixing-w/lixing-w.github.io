@@ -31,8 +31,9 @@ export default class MorphingBackground {
   private palettes: string[][] = [
     ['#E62727', '#F3F2EC', '#DCDCDC', '#1E93AB'],    
     ['#E62727', '#F3F2EC', '#DCDCDC', '#1E93AB'],   
-    ['#FF90BB', '#FFC1DA', '#F8F8E1', '#8ACCD5'],    
     ['#9ECAD6', '#748DAE', '#F5CBCB', '#FFEAEA'], 
+    ['#FF90BB', '#FFC1DA', '#F8F8E1', '#8ACCD5'],    
+    
   ];
 
   constructor(canvas: HTMLCanvasElement) {
@@ -102,15 +103,15 @@ export default class MorphingBackground {
       if (this.scrollPosition < csProjectsOffset) {
         sectionIndex = 0;
         sectionProgress = this.scrollPosition / csProjectsOffset;
-      } else if (this.scrollPosition >= csProjectsOffset && this.scrollPosition < musicOffset) {
+      } else if (this.scrollPosition >= csProjectsOffset && this.scrollPosition < maxOffset) {
         sectionIndex = 1;
-        sectionProgress = (this.scrollPosition - csProjectsOffset) / (musicOffset - csProjectsOffset);
-      } else if (this.scrollPosition >= musicOffset && this.scrollPosition < maxOffset) {
+        sectionProgress = (this.scrollPosition - csProjectsOffset) / (maxOffset - csProjectsOffset);
+      } else if (this.scrollPosition >= maxOffset && this.scrollPosition < musicOffset) {
         sectionIndex = 2;
-        sectionProgress = (this.scrollPosition - musicOffset) / (maxOffset - musicOffset);
-      } else if (this.scrollPosition >= maxOffset) {
+        sectionProgress = (this.scrollPosition - maxOffset) / (musicOffset - maxOffset);
+      } else if (this.scrollPosition >= musicOffset) {
         sectionIndex = 3;
-        sectionProgress = (this.scrollPosition - maxOffset) / (documentHeight - maxOffset);
+        sectionProgress = (this.scrollPosition - musicOffset) / (documentHeight - musicOffset);
       }
       
       // Map section progress to interpolation range (60% to 75%)
@@ -126,13 +127,12 @@ export default class MorphingBackground {
         // Map 60%-75% range to 0-1
         interpolationProgress = (sectionProgress - interpolationStart) / (interpolationEnd - interpolationStart);
       }
-      
+      console.log(`Section: ${sectionIndex}, Section Progress: ${sectionProgress.toFixed(2)}, Interp Progress: ${interpolationProgress.toFixed(2)}`);
       // Update polygon target colors based on scroll position
       this.polygons.forEach((polygon) => {
         const howManyPalettes = this.palettes.length;
         polygon.color = this.palettes[sectionIndex % howManyPalettes][polygon.useColorIndex];
         polygon.nextColor = this.palettes[(sectionIndex + 1) % howManyPalettes][polygon.useColorIndex];
-        console.log(sectionIndex, sectionProgress);
         polygon.interpolatedColor = this.lerpColor(polygon.color, polygon.nextColor, interpolationProgress);
       });
     });

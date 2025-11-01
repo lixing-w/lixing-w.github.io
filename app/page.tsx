@@ -81,8 +81,8 @@ export default function Home() {
       <nav>
         <a onClick={() => scrollToSection('hero')} onKeyDown={(e) => handleNavKeyDown(e, 'hero')} tabIndex={0} role="button">Home</a>
         <a onClick={() => scrollToSection('cs-projects')} onKeyDown={(e) => handleNavKeyDown(e, 'cs-projects')} tabIndex={0} role="button">CS</a>
-        <a onClick={() => scrollToSection('music')} onKeyDown={(e) => handleNavKeyDown(e, 'music')} tabIndex={0} role="button">Music</a>
         <a onClick={() => scrollToSection('max')} onKeyDown={(e) => handleNavKeyDown(e, 'max')} tabIndex={0} role="button">Max/MSP</a>
+        <a onClick={() => scrollToSection('music')} onKeyDown={(e) => handleNavKeyDown(e, 'music')} tabIndex={0} role="button">Music</a>
         <a onClick={() => scrollToSection('contact')} onKeyDown={(e) => handleNavKeyDown(e, 'contact')} tabIndex={0} role="button">Contact</a>
       </nav>
 
@@ -112,7 +112,7 @@ export default function Home() {
           <div className="project">
             <h3>LGAD Performance Characterization with ML</h3>
             <p className="project-meta">
-              Research with CERN | Advisor: Prof. Gaetano Barone | Jun 2025 - Present
+              Research with <a href="https://home.cern">CERN (European Organization for Nuclear Research)</a> | Advisor: <a href="https://vivo.brown.edu/display/gbarone1">Prof. Gaetano Barone</a> | Jun 2025 - Present
             </p>
             <p>
               Developed a comprehensive system to characterize Low-Gain Avalanche Detector (LGAD) 
@@ -124,11 +124,11 @@ export default function Home() {
             </p>
             <ul style={{ textAlign: 'left', marginLeft: '2rem', color: 'var(--text-secondary)' }}>
               <li>Built a robust database management system handling 400+ scan curves from 29 detectors</li>
-              <li>Proposed and implemented RANSAC-based curve fitting and linear interpolation to achieve noise-robustness and better resolution in curve analysis</li>
+              <li>Proposed and implemented RANSAC-based (RANdom SAmple Consensus) curve fitting and linear interpolation to achieve noise-robustness and better resolution in curve analysis</li>
               <li>Designed and trained conditional autoencoder to predict detector response across temperature, humidity, and bias voltage ranges</li>
               <li>Model predictions showed <InlineMath math="R^2 = 0.99" /> on linear correlation between breakdown voltage and temperature</li>
               <li>Model reconstructs training curves with <InlineMath math="RMSE = 0.090" /> and showed a low <InlineMath math="4.9\%" /> slope error compared to training data</li>
-              <li>Research presented on CERN DRD3 WG2 Meeting in October 2025, and CPAD 2025 at Penn</li>
+              <li>Research presented on <a href="https://indico.cern.ch/category/17387/">CERN DRD3 WG2 (CERN Detector Research and Development Working Group 2)</a> Meeting in October 2025, and <a href="https://indico.global/event/14966/">CPAD 2025 (Coordinating Panel for Advanced Detectors)</a> at Penn</li>
             </ul>
             <p style={{ marginTop: '1rem' }}>
               <strong>Tech Stack:</strong> Python, PyTorch, RANSAC
@@ -139,10 +139,10 @@ export default function Home() {
           <div className="project" tabIndex={0}>
             <h3>DJMAX Rhythm Game AI Player</h3>
             <p className="project-meta">
-              Term Project | Team: Me, Jonie Nishimura, Tiffay Gao. | May 2025
+              Term Project for Computer Vision | Team: Me, Jonie Nishimura, Tiffay Gao. | May 2025
             </p>
             <p>
-              Built a real-time AI player for <i>DJMAX Respect V</i>, a world-famous rhythm game, using deep learning in 2 weeks.
+              Built a real-time AI player for <a href="https://store.steampowered.com/app/960170/DJMAX_RESPECT_V/"><i>DJMAX Respect V</i></a>, a world-famous rhythm game, using deep learning in 2 weeks.
               The system outstrips average human performance, consistently scoring above 97% accuracy.
             </p>
             <p>
@@ -187,6 +187,49 @@ export default function Home() {
               <br />
               <strong>Jonie Nishimura:</strong> Preprocessing functions (validation, trim_video), inference pipeline (play.py), TensorFlow-to-PyTorch conversion, poster design.
             </p>
+          </div>
+        </section>
+
+        {/* MAX/MSP */}
+        <section id="max">
+          <h2>Max/MSP Patches</h2>
+          <p>Creative signal processing and real-time audio manipulation tools built in Cycling '74 Max 9.</p>
+
+          <div className="music-item">
+            <h3>Multi-effect Delay Loop</h3>
+            <p>
+              This patch creates a multi-effect delay loop, allowing for intricate sound design and live performance manipulation. 
+              It features a random sampling buffer, delay loop with overdrive and pitchshift feedback, stereo widening, and randomized EQ, creating a rich, evolving soundscape.
+            </p>
+            
+            <p style={{ marginTop: '2rem', fontWeight: 600 }}>Patch Interface</p>
+            <img
+              src="/delay_loop_presentation.png"
+              alt="Max Patch Multi-effect Delay Loop Presentation Mode Screenshot"
+              style={{
+                maxWidth: '80%',
+                borderRadius: '12px',
+                margin: '1rem 0',
+              }}
+            />
+            <p style={{ marginTop: '2rem', fontWeight: 600 }}>Patch Implementation</p>
+                        <img
+              src="/delay_loop.png"
+              alt="Max Patch Multi-effect Delay Loop Screenshot"
+              style={{
+                maxWidth: '80%',
+                borderRadius: '12px',
+                margin: '1rem 0',
+              }}
+            />
+
+            <p style={{ marginTop: '2rem', fontWeight: 600 }}>Demo:</p>
+            <div className="video-container">
+              <iframe
+                src="https://drive.google.com/file/d/YOUR_FILE_ID/preview"
+                allow="autoplay"
+              />
+            </div>
           </div>
         </section>
 
@@ -319,49 +362,6 @@ export default function Home() {
               <strong>Skills:</strong> Composition, Arrangement, Production, Music Video Direction, 
               AI-assisted Visual Design, Vocaloid Synthesis, Logic Pro
             </p>
-          </div>
-        </section>
-
-        {/* MAX/MSP */}
-        <section id="max">
-          <h2>Max/MSP Patches</h2>
-          <p>Creative signal processing and real-time audio manipulation tools built in Cycling Max 9.</p>
-
-          <div className="music-item">
-            <h3>Multi-effect Delay Loop</h3>
-            <p>
-              This patch creates a multi-effect delay loop, allowing for intricate sound design and live performance manipulation. 
-              It features a random sampling buffer, delay loop with overdrive and pitchshift feedback, stereo widening, and randomized EQ, creating a rich, evolving soundscape.
-            </p>
-            
-            <p style={{ marginTop: '2rem', fontWeight: 600 }}>Patch Interface</p>
-            <img
-              src="/delay_loop_presentation.png"
-              alt="Max Patch Multi-effect Delay Loop Presentation Mode Screenshot"
-              style={{
-                maxWidth: '80%',
-                borderRadius: '12px',
-                margin: '1rem 0',
-              }}
-            />
-            <p style={{ marginTop: '2rem', fontWeight: 600 }}>Patch Implementation</p>
-                        <img
-              src="/delay_loop.png"
-              alt="Max Patch Multi-effect Delay Loop Screenshot"
-              style={{
-                maxWidth: '80%',
-                borderRadius: '12px',
-                margin: '1rem 0',
-              }}
-            />
-
-            <p style={{ marginTop: '2rem', fontWeight: 600 }}>Demo:</p>
-            <div className="video-container">
-              <iframe
-                src="https://drive.google.com/file/d/YOUR_FILE_ID/preview"
-                allow="autoplay"
-              />
-            </div>
           </div>
         </section>
 
