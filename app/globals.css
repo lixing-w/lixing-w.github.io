@@ -171,6 +171,12 @@ canvas {
   backdrop-filter: blur(60px);
 }
 
+@media(prefers-color-scheme: dark) {
+  .project:hover {
+    background: rgba(255, 255, 255, 0.12);
+  }
+}
+
 .project h3 {
   color: var(--accent-1);
   text-align: left;
@@ -204,7 +210,7 @@ canvas {
   width: 84vw;
   max-width: 832px;
   margin: 1.5rem auto;
-  aspect-ratio: 1260 / 816;
+  aspect-ratio: 16 / 9;
   border-radius: 12px;
   overflow: hidden;
 }
@@ -222,7 +228,6 @@ canvas {
   margin: 1.5rem auto;
   aspect-ratio: 16 / 9;
   border-radius: 12px;
-  overflow: hidden;
 }
 
 .video-container iframe {

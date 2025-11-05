@@ -110,25 +110,28 @@ export default function Home() {
 
           {/* CERN Research */}
           <div className="project">
-            <h3>LGAD Performance Characterization with ML</h3>
+            <h3>4D Scilicon Tracker Performance Characterization with ML</h3>
             <p className="project-meta">
-              Research with <a href="https://home.cern">CERN (European Organization for Nuclear Research)</a> | Advisor: <a href="https://vivo.brown.edu/display/gbarone1">Prof. Gaetano Barone</a> | Jun 2025 - Present
+              Research with <a href="https://home.cern" target="_blank" rel="noopener noreferrer" tabIndex={0}>European Organization for Nuclear Research (CERN)</a> | Advisor: <a href="https://vivo.brown.edu/display/gbarone1" target="_blank" rel="noopener noreferrer" tabIndex={0}>Prof. Gaetano Barone</a> | Jun 2025 - Present
             </p>
             <p>
               Developed a comprehensive system to characterize Low-Gain Avalanche Detector (LGAD) 
-              performance under environmental stress factors using machine learning. Working with post-docs 
+              performance under environmental stress factors using machine learning. Worked with post-docs 
               and grad students on data collection and detector manufacturing.
+            </p>
+            <p>
+              See IEEE Poster <a href="https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2IvYy85ZTI4MTdmMDM4OTNkMjAxL0ViMFpsUTNTckhWQ3VOTkRuamdXazhVQlp3c0V3MTVpU3Nyc0NhcF9pUzVhcVE&cid=9E2817F03893D201&id=9E2817F03893D201%21s0d9519bdacd24275b8d3439e381693c5&parId=9E2817F03893D201%21s4d412fff098347cd8d3721c242bc02c6&o=OneUp" target="_blank" rel="noopener noreferrer" tabIndex={0}>here</a>.
             </p>
             <p>
               <strong>Key Contributions:</strong>
             </p>
             <ul style={{ textAlign: 'left', marginLeft: '2rem', color: 'var(--text-secondary)' }}>
-              <li>Built a robust database management system handling 400+ scan curves from 29 detectors</li>
+              <li>Built a robust database management system with custom script language handling 400+ scan curves from 41 detectors</li>
               <li>Proposed and implemented RANSAC-based (RANdom SAmple Consensus) curve fitting and linear interpolation to achieve noise-robustness and better resolution in curve analysis</li>
               <li>Designed and trained conditional autoencoder to predict detector response across temperature, humidity, and bias voltage ranges</li>
               <li>Model predictions showed <InlineMath math="R^2 = 0.99" /> on linear correlation between breakdown voltage and temperature</li>
               <li>Model reconstructs training curves with <InlineMath math="RMSE = 0.090" /> and showed a low <InlineMath math="4.9\%" /> slope error compared to training data</li>
-              <li>Research presented on <a href="https://indico.cern.ch/category/17387/">CERN DRD3 WG2 (CERN Detector Research and Development Working Group 2)</a> Meeting in October 2025, and <a href="https://indico.global/event/14966/">CPAD 2025 (Coordinating Panel for Advanced Detectors)</a> at Penn</li>
+              <li>Research presented on <a href="https://indico.cern.ch/category/17387/" target="_blank" rel="noopener noreferrer" tabIndex={0}>CERN Detector Research and Development Working Group 2 (CERN DRD3 WG2)</a> Meeting in October 2025, and <a href="https://indico.global/event/14966/" target="_blank" rel="noopener noreferrer" tabIndex={0}>Coordinating Panel for Advanced Detectors (CPAD 2025)</a> at Penn</li>
             </ul>
             <p style={{ marginTop: '1rem' }}>
               <strong>Tech Stack:</strong> Python, PyTorch, RANSAC
@@ -142,7 +145,7 @@ export default function Home() {
               Term Project for Computer Vision | Team: Me, Jonie Nishimura, Tiffay Gao. | May 2025
             </p>
             <p>
-              Built a real-time AI player for <a href="https://store.steampowered.com/app/960170/DJMAX_RESPECT_V/"><i>DJMAX Respect V</i></a>, a world-famous rhythm game, using deep learning in 2 weeks.
+              Built a real-time AI player for <a href="https://store.steampowered.com/app/960170/DJMAX_RESPECT_V/" target="_blank" rel="noopener noreferrer" tabIndex={0}><i>DJMAX Respect V</i></a>, a famous rhythm game, using deep learning in 2 weeks.
               The system outstrips average human performance, consistently scoring above 97% accuracy.
             </p>
             <p>
@@ -150,29 +153,26 @@ export default function Home() {
             </p>
             <ul style={{ textAlign: 'left', marginLeft: '2rem', color: 'var(--text-secondary)' }}>
               <li>Collected and curated 139,500 training frames through gameplay</li>
-              <li>Designed ResNet18 + GRU architecture for temporal pattern recognition</li>
-              <li>Engineered custom loss function balancing precision and timing accuracy</li>
+              <li>Customized ResNet18 + GRU backbone with modified pooling layers and track-specific feature map splitting to predict multi-track keypresses in the game</li>
+              <li>Designed a dynamic loss function with moving average smoothing to model timing tolerance, transient emphasis to prioritize keypress predictions, and class imbalance handling for robust training</li>
               <li>Optimized model to run at ~45 FPS in real time with 97% average accuracy</li>
             </ul>
             <p style={{ marginTop: '1rem' }}>
               <strong>Demo Video:</strong>
             </p>
-            <div className="video-container-inblock">
+            <div className="video-container-inblock" style={{ aspectRatio: '1260 / 816' }}>
               <iframe 
                 src="https://drive.google.com/file/d/1R4fXzo1rUxJgjgfUEzuSzTBLk3b6OEWm/preview" 
-                width="640" 
-                height="480" 
-                allow="autoplay"
               >
               </iframe>
             </div>
             <p style={{ marginTop: '1rem', fontSize: 'var(--font-size-base)'}}>
-                This video shows the AI playing the song "L" in real-time on a MacBook with M3 Max chip. 
+                This video shows the AI playing the song "L" in real-time on a MacBook.
                 The AI triggers the keys automatically without human input, 
                 consistently catching fast paced notes with high accuracy, and breaks my personal record at the end.
             </p>
             <p style={{ marginTop: '1rem', fontSize: 'var(--font-size-base)'}}>
-                More demos can be found on <a href="https://drive.google.com/drive/folders/1wsH6CuSxASzPQl1X4VYxtIIR43HAku2k?usp=share_link" tabIndex={0}>Google Drive</a>
+                More demos can be found on <a href="https://drive.google.com/drive/folders/1wsH6CuSxASzPQl1X4VYxtIIR43HAku2k?usp=share_link" target="_blank" rel="noopener noreferrer" tabIndex={0}>Google Drive</a>
             </p>
             <p style={{ marginTop: '1rem' }}>
               <strong>Tech Stack:</strong> Python, PyTorch, OpenCV, NumPy
@@ -223,11 +223,10 @@ export default function Home() {
               }}
             />
 
-            <p style={{ marginTop: '2rem', fontWeight: 600 }}>Demo:</p>
-            <div className="video-container">
+            <p style={{ marginTop: '2rem', fontWeight: 600 }}>Watch In Action</p>
+            <div className="video-container" style={{ aspectRatio: '1672 / 1080'}}>
               <iframe
-                src="https://drive.google.com/file/d/YOUR_FILE_ID/preview"
-                allow="autoplay"
+                src="https://drive.google.com/file/d/1-z8ZfuU9-QDBQ69xdH1rjrZAGeIns92v/preview"
               />
             </div>
           </div>
@@ -247,7 +246,7 @@ export default function Home() {
               for AI-generated artwork. 
             </p>
             <p>
-              The song ranked 14th in <br /> <a href="https://www.bilibili.com/opus/1105740885194178560" tabIndex={0}>Bili_Board Vocaloid Weekly Charts (Week 24, August 27, 2025 - Issue 64).</a>
+              The song ranked 14th in <br /> <a href="https://www.bilibili.com/opus/1105740885194178560" target="_blank" rel="noopener noreferrer" tabIndex={0}>Bili_Board Vocaloid Weekly Charts (Week 24, August 27, 2025 - Issue 64).</a>
             </p>
             <p>
               <strong>Behind the Scenes:</strong> ~40 hours of production | Composition,  
@@ -255,12 +254,13 @@ export default function Home() {
             </p>
             <div className="video-container">
               <iframe
-                src="//player.bilibili.com/player.html?isOutside=true&bvid=BV1q9YbzyEKd&cid=31789027319&p=1"
+                src="//player.bilibili.com/player.html?isOutside=true&bvid=BV1q9YbzyEKd&cid=31789027319&p=1&autoplay=0"
                 scrolling="no"
                 frameBorder="0"
                 allowFullScreen={true}
                 width="1920"
                 height="1080"
+                
               />
             </div>
           </div>
@@ -270,7 +270,7 @@ export default function Home() {
             <h3>Discography</h3>
             <p>Released on Spotify, Apple Music, NetEase Music, and other platforms.</p>
             
-            <h4 style={{ marginTop: '2rem', color: 'var(--accent-2)' }}><a href="https://open.spotify.com/album/5YcmMfCioLzhn9hN7e1Lxo">EVERWIND</a></h4>
+            <h4 style={{ marginTop: '2rem', color: 'var(--accent-2)' }}><a href="https://open.spotify.com/album/5YcmMfCioLzhn9hN7e1Lxo" target="_blank" rel="noopener noreferrer">EVERWIND</a></h4>
             <p style={{ fontSize: 'var(--font-size-base)' }}>
               Japanese ACG-inspired electronic music (Kawaii Bass) with energetic synths and infectious beats.
               <br />
@@ -289,7 +289,7 @@ export default function Home() {
               loading="lazy">
             </iframe>
 
-            <h4 style={{ marginTop: '2rem', color: 'var(--accent-2)' }}><a href="https://open.spotify.com/album/1mhELS8TIXMlH8IzZ8DOyg">Telescope</a></h4>
+            <h4 style={{ marginTop: '2rem', color: 'var(--accent-2)' }}><a href="https://open.spotify.com/album/1mhELS8TIXMlH8IzZ8DOyg" target="_blank" rel="noopener noreferrer">Telescope</a></h4>
             <p style={{ fontSize: 'var(--font-size-base)' }}>
               First released album as KONOHA' Sakurai. 
               <br />
@@ -300,14 +300,14 @@ export default function Home() {
               style={{ borderRadius: '12px', margin: '1rem 0' }}
               src="https://open.spotify.com/embed/album/1mhELS8TIXMlH8IzZ8DOyg?utm_source=generator" 
               width="100%" 
-              height="470" 
+              height="480" 
               frameBorder="0" 
               allowFullScreen={true}
               allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
               loading="lazy">
             </iframe>
 
-            <h4 style={{ marginTop: '2rem', color: 'var(--accent-2)' }}><a href="https://open.spotify.com/album/5h32lZHHXLd5nwsQsXr79J">Featured: Echoes of Summer</a></h4>
+            <h4 style={{ marginTop: '2rem', color: 'var(--accent-2)' }}><a href="https://open.spotify.com/album/5h32lZHHXLd5nwsQsXr79J" target="_blank" rel="noopener noreferrer">Featured: Echoes of Summer</a></h4>
             <p style={{ fontSize: 'var(--font-size-base)' }}>
               Featured artist on this collaborative album. I produced the second track.
               <br />
@@ -335,7 +335,7 @@ export default function Home() {
             </p>
             <div className="video-container">
               <iframe
-                src="//player.bilibili.com/player.html?isOutside=true&aid=560493183&bvid=BV19e4y1b7Jd&cid=836054901&p=1"
+                src="//player.bilibili.com/player.html?isOutside=true&aid=560493183&bvid=BV19e4y1b7Jd&cid=836054901&p=1&autoplay=0"
                 scrolling="no"
                 frameBorder="0"
                 allowFullScreen
@@ -359,8 +359,8 @@ export default function Home() {
               and "HoshiMiya" for earlier classical piano compositions.
             </p>
             <p>
-              <strong>Skills:</strong> Composition, Arrangement, Production, Music Video Direction, 
-              AI-assisted Visual Design, Vocaloid Synthesis, Logic Pro
+              <strong>Skills:</strong> Composition, Arrangement, Production, Music Video Production, 
+              Vocaloid Synthesis (CEVIO AI), Logic Pro
             </p>
           </div>
         </section>
@@ -392,7 +392,7 @@ export default function Home() {
             
             <div>
               <h3 style={{ color: 'var(--accent-1)', fontSize: 'var(--font-size-lg)' }}>Math</h3>
-              <p>Linear Algebra • Abstract Algebra • Analysis • Graph Theory</p>
+              <p>Linear Algebra • Multivariable Calculus • Abstract Algebra • Analysis • Graph Theory</p>
             </div>
             
             <div>
@@ -410,7 +410,7 @@ export default function Home() {
             <a href="mailto:lixing_wang@brown.edu" className="btn" tabIndex={0}>
               Email Me
             </a>
-            <a href="/resume.pdf" className="btn" tabIndex={0}>
+            <a href="/nov_5_resume.pdf" className="btn" tabIndex={0} target="_blank" rel="noopener noreferrer">
               Download Resume
             </a>
           </div>
