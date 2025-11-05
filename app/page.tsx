@@ -411,7 +411,7 @@ export default function Home() {
             <a href="mailto:lixing_wang@brown.edu" className="btn" tabIndex={0}>
               Email Me
             </a>
-            <a href="/nov_5_resume.pdf" className="btn" tabIndex={0} target="_blank" rel="noopener noreferrer">
+            <a href="/main.pdf" className="btn" tabIndex={0} target="_blank" rel="noopener noreferrer">
               Download Resume
             </a>
           </div>
