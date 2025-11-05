@@ -252,6 +252,7 @@ export default function Home() {
               <strong>Behind the Scenes:</strong> ~40 hours of production | Composition,  
               arrangement, mixing, music video creation, and visual effects.
             </p>
+            <p style={{ fontSize: 'var(--font-size-sm)' }}> Click the play button at lower left corner to watch. Or click on the video directly to access on Bilibili.</p>
             <div className="video-container">
               <iframe
                 src="//player.bilibili.com/player.html?isOutside=true&bvid=BV1q9YbzyEKd&cid=31789027319&p=1&autoplay=0"
